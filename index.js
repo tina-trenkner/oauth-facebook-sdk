@@ -26,7 +26,7 @@ function statusChangeCallback (response) {
   } else if (response.status === 'not_authorized') {
     document.getElementById('status').innerHTML = 'Please log in'
   } else {
-    document.getElementById('status').innerHTML = 'Are you sure you want to sign into this time suck?'
+    document.getElementById('status').innerHTML = 'Please log in to continue'
   }
 }
 
@@ -34,7 +34,7 @@ function testAPI () {
   console.log('Welcome!  Fetching your information.... ')
   FB.api('/me', (response) => {
     console.log('Successful login for: ' + response.name)
-    document.getElementById('status').innerHTML = `You're gonna regret this time suck ${response.name}!`
+    document.getElementById('status').innerHTML = `Thanks for logging in ${response.name}!`
   })
 }
 
