@@ -42,15 +42,9 @@ function testAPI () {
 
 function getPhotoAPI () {
   console.log('Getting profile photo...')
-  FB.api(
-  '/me',
-  'GET',
-  {"fields":"picture,name"},
-
-  function(response) {
+  FB.api('/me', (response) => {
       console.log(response.picture.data.url)
       document.getElementById('photo').innerHTML = `<img src="${response.picture.data.url}" />`
-    // document.getElementById('photo').innerHTML = `${response.picture}`
   }
 )
 }
